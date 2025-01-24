@@ -1,0 +1,130 @@
+body {
+    margin: 0%;
+    background-color: rgb(32, 32, 32);
+}
+
+/** Foooter **/
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(32, 32, 32);
+}
+
+.pack_1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+/** Animacion **/
+
+.animation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(32, 32, 32);
+}
+
+.item {
+    width: 85%;
+    height: 100%;
+}
+
+.gif {
+    width: 100%;
+    height: 100%;
+    border: 1px;
+    border-radius: 20px;
+}
+
+/** Fin de Animacion **/
+
+/** Main body**/
+
+.main_body {
+    background-color: rgb(32, 32, 32);
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 300px 300px;
+}
+
+#item_boxes {
+    margin: 10px;
+    background-color: rgb(61, 61, 61);
+    border: 1px;
+    border-radius: 10px;
+}
+
+.normal_text {
+    color: rgb(255, 255, 255);
+    font-family: "Source Code Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-style: italic;
+}
+
+.title_box {
+    background-color: rgb(61, 61, 61);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px;
+    border-radius: 10px;
+}
+
+.title_img {
+    margin: 20px;
+    background-color: rgb(61, 61, 61);
+    align-self: center;
+    width: 100px;
+    height: 100px;
+}
+
+.title_text {
+    align-self: center;
+    text-align: center;
+    color: antiquewhite;
+    width: 100px;
+    background-color: rgb(61, 61, 61);
+}
+
+.button_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Style the navbar */
+#navbar {
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Navbar links */
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+/* Page content */
+.content {
+    padding: 16px;
+}
