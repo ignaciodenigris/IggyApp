@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Css/base.css">
+    <link href="{% static 'Iggy_App\css\base.css' %}" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
@@ -62,12 +65,12 @@
     </div>
     </footer>
     <div class="animation">
-        <div class="item"><img class="gif" src="img/pixel-koi-pond_800.gif" alt="lol"></div>
+        <div class="item"><img class="gif" src="{% static 'Iggy_App\assets\img\pixel-koi-pond_800.gif' %}" alt="lol"></div>
     </div>
     <main class="main_body">
         <div id="item_boxes" class="box_1">
             <div class="title_box">
-                <div class="title_img"><img src="img/shool.png" width="100px" height="100px"></div>
+                <div class="title_img"><img src="{% static 'Iggy_App\assets\img\school.png' %}" width="100px" height="100px"></div>
                 <div class="title_text">
                     <p class="normal_text">Colegio</p>
                 </div>
@@ -79,9 +82,9 @@
         </div>
         <div id="item_boxes" class="box_2">
             <div class="title_box">
-                <div class="title_img"><img src="img/extracurricualres.png" width="100px" height="100px"></div>
+                <div class="title_img"><img src="{% static 'Iggy_App\assets\img\extracurricualres.png' %}" width="100px" height="100px"></div>
                 <div class="title_text">
-                    <p class="normal_text">Extracurricualres</p>
+                    <p class="normal_text">Extracurriculares</p>
                 </div>
             </div>
             <hr width="100%" size="6" color="white" align="center">
@@ -91,7 +94,7 @@
         </div>
         <div id="item_boxes" class="box_3">
             <div class="title_box">
-                <div class="title_img"><img src="img/diario.png" width="100px" height="100px"></div>
+                <div class="title_img"><img src="{% static 'Iggy_App\assets\img\diario.png' %}" width="100px" height="100px"></div>
                 <div class="title_text">
                     <p class="normal_text">Diario</p>
                 </div>
@@ -103,7 +106,7 @@
         </div>
         <div id="item_boxes" class="box_4">
             <div class="title_box">
-                <div class="title_img"><img src="img/deporte.png" width="100px" height="100px"></div>
+                <div class="title_img"><img src="{% static 'Iggy_App\assets\img\deporte.png' %}" width="100px" height="100px"></div>
                 <div class="title_text">
                     <p class="normal_text">Deportes</p>
                 </div>
