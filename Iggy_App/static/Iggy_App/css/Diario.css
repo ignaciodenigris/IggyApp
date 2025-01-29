@@ -1,0 +1,185 @@
+body {
+    margin: 0%;
+    background-color: #202020;
+}
+
+/**Footer**/
+
+/* Style the navbar */
+#navbar {
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Navbar links */
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+/* Page content */
+.content {
+    padding: 16px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(32, 32, 32);
+}
+
+.pack_1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/** Animacion **/
+
+.animation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background-color: rgb(32, 32, 32);
+}
+
+.item {
+    width: 85%;
+    height: 100%;
+}
+
+.gif {
+    width: 100%;
+    height: 100%;
+    border: 1px;
+    border-radius: 20px;
+}
+
+.hr_1 {
+    margin: 40px;
+}
+
+.normal_text {
+    color: rgb(255, 255, 255);
+    font-family: "Source Code Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-style: italic;
+}
+
+.title_text1 {
+    margin-top: 50px;
+    margin-left: 70px;
+    background-color: rgb(32, 32, 32);
+    color: rgb(255, 255, 255);
+    font-family: "Source Code Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-style: italic;
+}
+
+/**Formulario**/
+
+.data_entry {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+label {
+    color: rgb(255, 255, 255);
+    font-family: "Source Code Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-style: italic;
+    visibility: hidden;
+}
+
+.decoration {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.box_date {
+    width: 80px;
+    font-size: x-large;
+    text-align: center;
+    background-color: rgb(99, 145, 206);
+    border: 1px;
+    border-radius: 20px;
+}
+
+
+.clock_text {
+    color: blanchedalmond;
+    font-family: "Roboto Slab", serif;
+    font-weight: 800;
+    font-size: 80px;
+    font-style: italic;
+}
+
+.gif_csm{
+    margin: 10px;
+    width: 400px;
+    border: 1px;
+    border-radius: 10px;
+}
+
+/** Show diary **/
+
+.show_diary{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.diary_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.diary_box{
+    background-color: rgb(99, 145, 206);
+    padding: 10px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px;
+    border-radius: 10px;
+}
+
+.diary_box_text{
+    display: flex;
+    justify-content: center;
+}
+
+/** tabla **/
+
+.table{
+    background-color: #333;
+    border: 1px;
+}
