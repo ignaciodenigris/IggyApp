@@ -1,0 +1,25 @@
+{% extends 'Iggy_App/Bases/First_Base.html' %}
+{% load static %}
+
+{%block content%}
+
+<body>
+    <center>
+        <h1>Extra</h1>
+    </center>
+
+    <div>
+        <center>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <center>
+                    <p class="normal_text">Entrada de Diario:</p>
+                </center>
+                <center>{{form.as_p}}</center>
+                <center><button type="submit" class="btn btn-primary"> Guardar</button></center>
+            </form>
+        </center>
+    </div>
+</body>
+
+{% endblock %}

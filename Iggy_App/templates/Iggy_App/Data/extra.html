@@ -1,0 +1,106 @@
+{% extends 'Iggy_App/Bases/First_Base.html' %}
+{% load static %}
+
+{%block content%}
+
+<link rel="stylesheet" href="{% static 'Iggy_App\css\materias\materias.css' %}">
+
+<body>
+    <div id="navbar">
+        <div class="logo">
+            <h1 class="normal_text">HobiHub</h1>
+        </div>
+        <div>
+            <a href="{% url 'inicio' %}">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                    <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                    <div class="dropdown mt-3">
+                        <button class="btn btn-thirdary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'diario' %}">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="datashow">
+    <div class="item-show">
+        <div>
+            <h1 class="normal_text"><center>Extras</center></h1>
+            <hr size="5" color="white" width="100%" align="center">
+        </div>
+        <div>
+            <div class="muestra_nota">
+                <center><p class="normal_text">Nota del primer trimestre: {{score_Ex}}</p></center>
+            </div>
+            <div class="muestra_nota">
+                <center><p class="normal_text">Nota del segundo trimestre: {{score_Ex_Seg}}</p></center>
+            </div>
+            <div class="muestra_nota">
+                <center><p class="normal_text">Nota del tercer trimestre: {{score_Ex_Ter}}</p></center>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="data_enter">
+        <center>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <center>
+                    <p class="normal_text">Ingrse datos:</p>
+                </center>
+                <center>{{form.as_p}}</center>
+                <center><button type="submit" class="btn btn-primary"> Guardar</button></center>
+            </form>
+        </center>
+    </div>
+    <div>
+        <table class="table">
+                <tr>
+                    <th class="th"><p class="normal_table">materia</p></th>
+                    <th class="th"><p class="normal_table">tema</p></th>
+                    <th class="th"><p class="normal_table">nota</p></th>
+                    <th class="th"><p class="normal_table">detalles</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for list_ex in list_ex%}
+                <tr>
+                    <td class="td"><p class="normal_table">{{list_ex.materia}}</p></td>
+                    <td class="td"><p class="normal_table">{{list_ex.temaEx}}</p></td>
+                    <td class="td"><p class="normal_table">{{list_ex.notaEx}}</p></td>
+                    <td class="td"><a class="btn btn-danger" href="{% url 'extra_form_delete' list_ex.id%}">eliminar</a></td>
+
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+
+{% endblock %}

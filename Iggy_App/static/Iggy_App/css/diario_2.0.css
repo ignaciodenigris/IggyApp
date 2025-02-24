@@ -142,7 +142,7 @@ label {
 
 .gif_csm{
     margin: 10px;
-    width: 400px;
+    width: 300px;
     border: 1px;
     border-radius: 10px;
 }
@@ -182,4 +182,14 @@ label {
 .table{
     background-color: #333;
     border: 1px;
+}
+
+@media screen and (max-width: 645px) {
+    .data_entry {
+        display: flex;
+        flex-direction: column;
+    }
+    .chw{
+        display: none;
+    }
 }

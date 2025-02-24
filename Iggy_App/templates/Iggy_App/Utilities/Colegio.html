@@ -1,0 +1,832 @@
+{% extends 'Iggy_App/Bases/First_Base.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+
+    <link rel="stylesheet" href="{% static 'Iggy_App/css/Colegio_2.2.css' %}">
+
+    <div id="data_matematica" data-python-variable= {{score_M}}></div>
+    <div id="data_matematica2" data-python-variable= {{score_Mat_Seg}}></div>
+    <div id="data_matematica3" data-python-variable= {{score_Mat_Ter}}></div>
+    <div id="data_matematica4" data-python-variable= {{score_L}}></div>
+    <div id="data_matematica5" data-python-variable= {{score_Len_Seg}}></div>
+    <div id="data_matematica6" data-python-variable= {{score_Len_Ter}}></div>
+    <div id="data_Ex1" data-python-variable= {{score_Ex}}></div>
+    <div id="data_Ex2" data-python-variable= {{score_Ex_Seg}}></div>
+    <div id="data_Ex3" data-python-variable= {{score_Ex_Ter}}></div>
+    <div id="data_eco1" data-python-variable= {{score_Eco}}></div>
+    <div id="data_eco2" data-python-variable= {{score_Eco_Seg}}></div>
+    <div id="data_eco3" data-python-variable= {{score_Eco_Ter}}></div>
+    <div id="data_pro1" data-python-variable= {{score_Pro}}></div>
+    <div id="data_pro2" data-python-variable= {{score_Pro_Seg}}></div>
+    <div id="data_pro3" data-python-variable= {{score_Pro_Ter}}></div>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawVisualization);
+
+            
+            let first_avrg_mth = document.getElementById('data_matematica').getAttribute('data-python-variable');
+                if (first_avrg_mth == "1") {
+                    first_math = 1
+                } else if (first_avrg_mth == "1.5") {
+                    first_math = 1.5
+                } else if (first_avrg_mth == "2") {
+                    first_math = 2
+                } else if (first_avrg_mth == "2.5") {
+                    first_math = 2.5
+                } else if (first_avrg_mth == "3") {
+                    first_math = 3
+                } else if (first_avrg_mth == "3.5") {
+                    first_math = 3.5
+                } else if (first_avrg_mth == "4") {
+                    first_math = 4
+                } else if (first_avrg_mth == "4.5") {
+                    first_math = 4.5
+                } else if (first_avrg_mth == "5") {
+                    first_math = 5
+                } else if (first_avrg_mth == "5.5") {
+                    first_math = 5.5
+                } else if (first_avrg_mth == "6") {
+                    first_math = 6
+                } else if (first_avrg_mth == "6.5") {
+                    first_math = 6.5
+                } else if (first_avrg_mth == "7") {
+                    first_math = 7
+                } else if (first_avrg_mth == "7.5") {
+                    first_math = 7.5
+                }else if (first_avrg_mth == "8") {
+                    first_math = 8
+                } else if (first_avrg_mth == "8.5") {
+                    first_math = 8.5
+                } else if (first_avrg_mth == "9") {
+                    first_math = 9
+                } else if (first_avrg_mth == "9.5") {
+                    first_math = 9.50
+                } else if (first_avrg_mth == "dict_values([10.0])") {
+                    first_math = 10
+                }
+
+            let second_avrg_mth = document.getElementById('data_matematica2').getAttribute('data-python-variable');
+                if (second_avrg_mth == "1") {
+                    second_math = 1
+                } else if (second_avrg_mth == "1.5") {
+                    second_math = 1.5
+                } else if (second_avrg_mth == "2") {
+                    second_math = 2
+                } else if (second_avrg_mth == "2.5") {
+                    second_math = 2.5
+                } else if (second_avrg_mth == "3") {
+                    second_math = 3
+                } else if (second_avrg_mth == "3.5") {
+                    second_math = 3.5
+                } else if (second_avrg_mth == "4") {
+                    second_math = 4
+                } else if (second_avrg_mth == "4.5") {
+                    second_math = 4.5
+                } else if (second_avrg_mth == "5") {
+                    second_math = 5
+                } else if (second_avrg_mth == "5.5") {
+                    second_math = 5.5
+                } else if (second_avrg_mth == "6") {
+                    second_math = 6
+                } else if (second_avrg_mth == "6.5") {
+                    second_math = 6.5
+                } else if (second_avrg_mth == "7") {
+                    second_math = 7
+                } else if (second_avrg_mth == "7.5") {
+                    second_math = 7.5
+                }else if (second_avrg_mth == "8") {
+                    second_math = 8
+                } else if (second_avrg_mth == "8.5") {
+                    second_math = 8.5
+                } else if (second_avrg_mth == "9") {
+                    second_math = 9
+                } else if (second_avrg_mth == "9.5") {
+                    second_math = 9.50
+                } else if (second_avrg_mth == "dict_values([10.0])") {
+                    second_math = 10
+                }
+            let third_avrg_mth = document.getElementById('data_matematica3').getAttribute('data-python-variable');
+                if (third_avrg_mth == "1") {
+                    third_math = 1
+                } else if (third_avrg_mth == "1.5") {
+                    third_math = 1.5
+                } else if (third_avrg_mth == "2") {
+                    third_math = 2
+                } else if (third_avrg_mth == "2.5") {
+                    third_math = 2.5
+                } else if (third_avrg_mth == "3") {
+                    third_math = 3
+                } else if (third_avrg_mth == "3.5") {
+                    third_math = 3.5
+                } else if (third_avrg_mth == "4") {
+                    third_math = 4
+                } else if (third_avrg_mth == "4.5") {
+                    third_math = 4.5
+                } else if (third_avrg_mth == "5") {
+                    third_math = 5
+                } else if (third_avrg_mth == "5.5") {
+                    third_math = 5.5
+                } else if (third_avrg_mth == "6") {
+                    third_math = 6
+                } else if (third_avrg_mth == "6.5") {
+                    third_math = 6.5
+                } else if (third_avrg_mth == "7") {
+                    third_math = 7
+                } else if (third_avrg_mth == "7.5") {
+                    third_math = 7.5
+                }else if (third_avrg_mth == "8") {
+                    third_math = 8
+                } else if (third_avrg_mth == "8.5") {
+                    third_math = 8.5
+                } else if (third_avrg_mth == "9") {
+                    third_math = 9
+                } else if (third_avrg_mth == "9.5") {
+                    third_math = 9.50
+                } else if (third_avrg_mth == "dict_values([10.0])") {
+                    third_math = 10
+                }
+
+            let first_avrg_lng = document.getElementById('data_matematica4').getAttribute('data-python-variable');
+                if (first_avrg_lng == "1") {
+                    first_lng = 1
+                } else if (first_avrg_lng == "1.5") {
+                    first_lng = 1.5
+                } else if (first_avrg_lng == "2") {
+                    first_lng = 2
+                } else if (first_avrg_lng == "2.5") {
+                    first_lng = 2.5
+                } else if (first_avrg_lng == "3") {
+                    first_lng = 3
+                } else if (first_avrg_lng == "3.5") {
+                    first_lng = 3.5
+                } else if (first_avrg_lng == "4") {
+                    first_lng = 4
+                } else if (first_avrg_lng == "4.5") {
+                    first_lng = 4.5
+                } else if (first_avrg_lng == "5") {
+                    first_lng = 5
+                } else if (first_avrg_lng == "5.5") {
+                    first_lng = 5.5
+                } else if (first_avrg_lng == "6") {
+                    first_lng = 6
+                } else if (first_avrg_lng == "6.5") {
+                    first_lng = 6.5
+                } else if (first_avrg_lng == "7") {
+                    first_lng = 7
+                } else if (first_avrg_lng == "7.5") {
+                    first_lng = 7.5
+                }else if (first_avrg_lng == "8") {
+                    first_lng = 8
+                } else if (first_avrg_lng == "8.5") {
+                    first_lng = 8.5
+                } else if (first_avrg_lng == "9") {
+                    first_lng = 9
+                } else if (first_avrg_lng == "9.5") {
+                    first_lng = 9.50
+                } else if (first_avrg_lng == "dict_values([10.0])") {
+                    first_lng = 10
+                }  
+            let second_avrg_lng = document.getElementById('data_matematica5').getAttribute('data-python-variable');
+                if (second_avrg_lng == "1") {
+                    second_lng = 1
+                } else if (second_avrg_lng == "1.5") {
+                    second_lng = 1.5
+                } else if (second_avrg_lng == "2") {
+                    second_lng = 2
+                } else if (second_avrg_lng == "2.5") {
+                    second_lng = 2.5
+                } else if (second_avrg_lng == "3") {
+                    second_lng = 3
+                } else if (second_avrg_lng == "3.5") {
+                    second_lng = 3.5
+                } else if (second_avrg_lng == "4") {
+                    second_lng = 4
+                } else if (second_avrg_lng == "4.5") {
+                    second_lng = 4.5
+                } else if (second_avrg_lng == "5") {
+                    second_lng = 5
+                } else if (second_avrg_lng == "5.5") {
+                    second_lng = 5.5
+                } else if (second_avrg_lng == "6") {
+                    second_lng = 6
+                } else if (second_avrg_lng == "6.5") {
+                    second_lng = 6.5
+                } else if (second_avrg_lng == "7") {
+                    second_lng = 7
+                } else if (second_avrg_lng == "7.5") {
+                    second_lng = 7.5
+                }else if (second_avrg_lng == "8") {
+                    second_lng = 8
+                } else if (second_avrg_lng == "8.5") {
+                    second_lng = 8.5
+                } else if (second_avrg_lng == "9") {
+                    second_lng = 9
+                } else if (second_avrg_lng == "9.5") {
+                    second_lng = 9.50
+                } else if (second_avrg_lng == "dict_values([10.0])") {
+                    second_lng = 10
+                }
+            let third_avrg_lng = document.getElementById('data_matematica6').getAttribute('data-python-variable');
+                if (third_avrg_lng == "1") {
+                    third_lng = 1
+                } else if (third_avrg_lng == "1.5") {
+                    third_lng = 1.5
+                } else if (third_avrg_lng == "2") {
+                    third_lng = 2
+                } else if (third_avrg_lng == "2.5") {
+                    third_lng = 2.5
+                } else if (third_avrg_lng == "3") {
+                    third_lng = 3
+                } else if (third_avrg_lng == "3.5") {
+                    third_lng = 3.5
+                } else if (third_avrg_lng == "4") {
+                    third_lng = 4
+                } else if (third_avrg_lng == "4.5") {
+                    third_lng = 4.5
+                } else if (third_avrg_lng == "5") {
+                    third_lng = 5
+                } else if (third_avrg_lng == "5.5") {
+                    third_lng = 5.5
+                } else if (third_avrg_lng == "6") {
+                    third_lng = 6
+                } else if (third_avrg_lng == "6.5") {
+                    third_lng = 6.5
+                } else if (third_avrg_lng == "7") {
+                    third_lng = 7
+                } else if (third_avrg_lng == "7.5") {
+                    third_lng = 7.5
+                }else if (third_avrg_lng == "8") {
+                    third_lng = 8
+                } else if (third_avrg_lng == "8.5") {
+                    third_lng = 8.5
+                } else if (third_avrg_lng == "9") {
+                    third_lng = 9
+                } else if (third_avrg_lng == "9.5") {
+                    third_lng = 9.50
+                } else if (third_avrg_lng == "10") {
+                    third_lng = 10
+                }  
+
+
+            let first_avrg_Ex = document.getElementById('data_Ex1').getAttribute('data-python-variable');
+                if (first_avrg_Ex == "1") {
+                    first_Ex = 1
+                } else if (first_avrg_Ex == "1.5") {
+                    first_Ex = 1.5
+                } else if (first_avrg_Ex == "2") {
+                    first_Ex = 2
+                } else if (first_avrg_Ex == "2.5") {
+                    first_Ex = 2.5
+                } else if (first_avrg_Ex == "3") {
+                    first_Ex = 3
+                } else if (first_avrg_Ex == "3.5") {
+                    first_Ex = 3.5
+                } else if (first_avrg_Ex == "4") {
+                    first_Ex = 4
+                } else if (first_avrg_Ex == "4.5") {
+                    first_Ex = 4.5
+                } else if (first_avrg_Ex == "5") {
+                    first_Ex = 5
+                } else if (first_avrg_Ex == "5.5") {
+                    first_Ex = 5.5
+                } else if (first_avrg_Ex == "6") {
+                    first_Ex = 6
+                } else if (first_avrg_Ex == "6.5") {
+                    first_Ex = 6.5
+                } else if (first_avrg_Ex == "7") {
+                    first_Ex = 7
+                } else if (first_avrg_Ex == "7.5") {
+                    first_Ex = 7.5
+                }else if (first_avrg_Ex == "8") {
+                    first_Ex = 8
+                } else if (first_avrg_Ex == "8.5") {
+                    first_Ex = 8.5
+                } else if (first_avrg_Ex == "9") {
+                    first_Ex = 9
+                } else if (first_avrg_Ex == "9.5") {
+                    first_Ex = 9.50
+                } else if (first_avrg_Ex == "dict_values([10.0])") {
+                    first_Ex = 10
+                }  
+            let second_avrg_Ex = document.getElementById('data_Ex2').getAttribute('data-python-variable');
+                if (second_avrg_Ex == "1") {
+                    second_Ex = 1
+                } else if (second_avrg_Ex == "1.5") {
+                    second_Ex = 1.5
+                } else if (second_avrg_Ex == "2") {
+                    second_Ex = 2
+                } else if (second_avrg_Ex == "2.5") {
+                    second_Ex = 2.5
+                } else if (second_avrg_Ex == "3") {
+                    second_Ex = 3
+                } else if (second_avrg_Ex == "3.5") {
+                    second_Ex = 3.5
+                } else if (second_avrg_Ex == "4") {
+                    second_Ex = 4
+                } else if (second_avrg_Ex == "4.5") {
+                    second_Ex = 4.5
+                } else if (second_avrg_Ex == "5") {
+                    second_Ex = 5
+                } else if (second_avrg_Ex == "5.5") {
+                    second_Ex = 5.5
+                } else if (second_avrg_Ex == "6") {
+                    second_Ex = 6
+                } else if (second_avrg_Ex == "6.5") {
+                    second_Ex = 6.5
+                } else if (second_avrg_Ex == "7") {
+                    second_Ex = 7
+                } else if (second_avrg_Ex == "7.5") {
+                    second_Ex = 7.5
+                }else if (second_avrg_Ex == "8") {
+                    second_Ex = 8
+                } else if (second_avrg_Ex == "8.5") {
+                    second_Ex = 8.5
+                } else if (second_avrg_Ex == "9") {
+                    second_Ex = 9
+                } else if (second_avrg_Ex == "9.5") {
+                    second_Ex = 9.50
+                } else if (second_avrg_Ex == "dict_values([10.0])") {
+                    second_Ex = 10
+                }
+            let third_avrg_Ex = document.getElementById('data_Ex3').getAttribute('data-python-variable');
+                if (third_avrg_Ex == "1") {
+                    third_Ex = 1
+                } else if (third_avrg_Ex == "1.5") {
+                    third_Ex = 1.5
+                } else if (third_avrg_Ex == "2") {
+                    third_Ex = 2
+                } else if (third_avrg_Ex == "2.5") {
+                    third_Ex = 2.5
+                } else if (third_avrg_Ex == "3") {
+                    third_Ex = 3
+                } else if (third_avrg_Ex == "3.5") {
+                    third_Ex = 3.5
+                } else if (third_avrg_Ex == "4") {
+                    third_Ex = 4
+                } else if (third_avrg_Ex == "4.5") {
+                    third_Ex = 4.5
+                } else if (third_avrg_Ex == "5") {
+                    third_Ex = 5
+                } else if (third_avrg_Ex == "5.5") {
+                    third_Ex = 5.5
+                } else if (third_avrg_Ex == "6") {
+                    third_Ex = 6
+                } else if (third_avrg_Ex == "6.5") {
+                    third_Ex = 6.5
+                } else if (third_avrg_Ex == "7") {
+                    third_Ex = 7
+                } else if (third_avrg_Ex == "7.5") {
+                    third_Ex = 7.5
+                }else if (third_avrg_Ex == "8") {
+                    third_Ex = 8
+                } else if (third_avrg_Ex == "8.5") {
+                    third_Ex = 8.5
+                } else if (third_avrg_Ex == "9") {
+                    third_Ex = 9
+                } else if (third_avrg_Ex == "9.5") {
+                    third_Ex = 9.50
+                } else if (third_avrg_Ex == "10") {
+                    third_Ex = 10
+                }
+                
+            let first_avrg_eco = document.getElementById('data_eco1').getAttribute('data-python-variable');
+                if (first_avrg_eco == "1") {
+                    first_eco = 1
+                } else if (first_avrg_eco == "1.5") {
+                    first_eco = 1.5
+                } else if (first_avrg_eco == "2") {
+                    first_eco = 2
+                } else if (first_avrg_eco == "2.5") {
+                    first_eco = 2.5
+                } else if (first_avrg_eco == "3") {
+                    first_eco = 3
+                } else if (first_avrg_eco == "3.5") {
+                    first_eco = 3.5
+                } else if (first_avrg_eco == "4") {
+                    first_eco = 4
+                } else if (first_avrg_eco == "4.5") {
+                    first_eco = 4.5
+                } else if (first_avrg_eco == "5") {
+                    first_eco = 5
+                } else if (first_avrg_eco == "5.5") {
+                    first_eco = 5.5
+                } else if (first_avrg_eco == "6") {
+                    first_eco = 6
+                } else if (first_avrg_eco == "6.5") {
+                    first_eco = 6.5
+                } else if (first_avrg_eco == "7") {
+                    first_eco = 7
+                } else if (first_avrg_eco == "7.5") {
+                    first_eco = 7.5
+                }else if (first_avrg_eco == "8") {
+                    first_eco = 8
+                } else if (first_avrg_eco == "8.5") {
+                    first_eco = 8.5
+                } else if (first_avrg_eco == "9") {
+                    first_eco = 9
+                } else if (first_avrg_eco == "9.5") {
+                    first_eco = 9.50
+                } else if (first_avrg_eco == "dict_values([10.0])") {
+                    first_eco = 10
+                }  
+            let second_avrg_eco = document.getElementById('data_eco2').getAttribute('data-python-variable');
+                if (second_avrg_eco == "1") {
+                    second_eco = 1
+                } else if (second_avrg_eco == "1.5") {
+                    second_eco = 1.5
+                } else if (second_avrg_eco == "2") {
+                    second_eco = 2
+                } else if (second_avrg_eco == "2.5") {
+                    second_eco = 2.5
+                } else if (second_avrg_eco == "3") {
+                    second_eco = 3
+                } else if (second_avrg_eco == "3.5") {
+                    second_eco = 3.5
+                } else if (second_avrg_eco == "4") {
+                    second_eco = 4
+                } else if (second_avrg_eco == "4.5") {
+                    second_eco = 4.5
+                } else if (second_avrg_eco == "5") {
+                    second_eco = 5
+                } else if (second_avrg_eco == "5.5") {
+                    second_eco = 5.5
+                } else if (second_avrg_eco == "6") {
+                    second_eco = 6
+                } else if (second_avrg_eco == "6.5") {
+                    second_eco = 6.5
+                } else if (second_avrg_eco == "7") {
+                    second_eco = 7
+                } else if (second_avrg_eco == "7.5") {
+                    second_eco = 7.5
+                }else if (second_avrg_eco == "8") {
+                    second_eco = 8
+                } else if (second_avrg_eco == "8.5") {
+                    second_eco = 8.5
+                } else if (second_avrg_eco == "9") {
+                    second_eco = 9
+                } else if (second_avrg_eco == "9.5") {
+                    second_eco = 9.50
+                } else if (second_avrg_eco == "dict_values([10.0])") {
+                    second_eco = 10
+                }
+            let third_avrg_eco = document.getElementById('data_eco3').getAttribute('data-python-variable');
+                if (third_avrg_eco == "1") {
+                    third_eco = 1
+                } else if (third_avrg_eco == "1.5") {
+                    third_eco = 1.5
+                } else if (third_avrg_eco == "2") {
+                    third_eco = 2
+                } else if (third_avrg_eco == "2.5") {
+                    third_eco = 2.5
+                } else if (third_avrg_eco == "3") {
+                    third_eco = 3
+                } else if (third_avrg_eco == "3.5") {
+                    third_eco = 3.5
+                } else if (third_avrg_eco == "4") {
+                    third_eco = 4
+                } else if (third_avrg_eco == "4.5") {
+                    third_eco = 4.5
+                } else if (third_avrg_eco == "5") {
+                    third_eco = 5
+                } else if (third_avrg_eco == "5.5") {
+                    third_eco = 5.5
+                } else if (third_avrg_eco == "6") {
+                    third_eco = 6
+                } else if (third_avrg_eco == "6.5") {
+                    third_eco = 6.5
+                } else if (third_avrg_eco == "7") {
+                    third_eco = 7
+                } else if (third_avrg_eco == "7.5") {
+                    third_eco = 7.5
+                }else if (third_avrg_eco == "8") {
+                    third_eco = 8
+                } else if (third_avrg_eco == "8.5") {
+                    third_eco = 8.5
+                } else if (third_avrg_eco == "9") {
+                    third_eco = 9
+                } else if (third_avrg_eco == "9.5") {
+                    third_eco = 9.50
+                } else if (third_avrg_eco == "10") {
+                    third_eco = 10
+                }
+
+            let first_avrg_pro = document.getElementById('data_pro1').getAttribute('data-python-variable');
+                if (first_avrg_pro == "1") {
+                    first_pro = 1
+                } else if (first_avrg_pro == "1.5") {
+                    first_pro = 1.5
+                } else if (first_avrg_pro == "2") {
+                    first_pro = 2
+                } else if (first_avrg_pro == "2.5") {
+                    first_pro = 2.5
+                } else if (first_avrg_pro == "3") {
+                    first_pro = 3
+                } else if (first_avrg_pro == "3.5") {
+                    first_pro = 3.5
+                } else if (first_avrg_pro == "4") {
+                    first_pro = 4
+                } else if (first_avrg_pro == "4.5") {
+                    first_pro = 4.5
+                } else if (first_avrg_pro == "5") {
+                    first_pro = 5
+                } else if (first_avrg_pro == "5.5") {
+                    first_pro = 5.5
+                } else if (first_avrg_pro == "6") {
+                    first_pro = 6
+                } else if (first_avrg_pro == "6.5") {
+                    first_pro = 6.5
+                } else if (first_avrg_pro == "7") {
+                    first_pro = 7
+                } else if (first_avrg_pro == "7.5") {
+                    first_pro = 7.5
+                }else if (first_avrg_pro == "8") {
+                    first_pro = 8
+                } else if (first_avrg_pro == "8.5") {
+                    first_pro = 8.5
+                } else if (first_avrg_pro == "9") {
+                    first_pro = 9
+                } else if (first_avrg_pro == "9.5") {
+                    first_pro = 9.50
+                } else if (first_avrg_pro == "dict_values([10.0])") {
+                    first_pro = 10
+                }  
+            let second_avrg_pro = document.getElementById('data_pro2').getAttribute('data-python-variable');
+                if (second_avrg_pro == "1") {
+                    second_pro = 1
+                } else if (second_avrg_pro == "1.5") {
+                    second_pro = 1.5
+                } else if (second_avrg_pro == "2") {
+                    second_pro = 2
+                } else if (second_avrg_pro == "2.5") {
+                    second_pro = 2.5
+                } else if (second_avrg_pro == "3") {
+                    second_pro = 3
+                } else if (second_avrg_pro == "3.5") {
+                    second_pro = 3.5
+                } else if (second_avrg_pro == "4") {
+                    second_pro = 4
+                } else if (second_avrg_pro == "4.5") {
+                    second_pro = 4.5
+                } else if (second_avrg_pro == "5") {
+                    second_pro = 5
+                } else if (second_avrg_pro == "5.5") {
+                    second_pro = 5.5
+                } else if (second_avrg_pro == "6") {
+                    second_pro = 6
+                } else if (second_avrg_pro == "6.5") {
+                    second_pro = 6.5
+                } else if (second_avrg_pro == "7") {
+                    second_pro = 7
+                } else if (second_avrg_pro == "7.5") {
+                    second_pro = 7.5
+                }else if (second_avrg_pro == "8") {
+                    second_pro = 8
+                } else if (second_avrg_pro == "8.5") {
+                    second_pro = 8.5
+                } else if (second_avrg_pro == "9") {
+                    second_pro = 9
+                } else if (second_avrg_pro == "9.5") {
+                    second_pro = 9.50
+                } else if (second_avrg_pro == "10") {
+                    second_pro = 10
+                }
+            let third_avrg_pro = document.getElementById('data_pro3').getAttribute('data-python-variable');
+                if (third_avrg_pro == "1") {
+                    third_pro = 1
+                } else if (third_avrg_pro == "1.5") {
+                    third_pro = 1.5
+                } else if (third_avrg_pro == "2") {
+                    third_pro = 2
+                } else if (third_avrg_pro == "2.5") {
+                    third_pro = 2.5
+                } else if (third_avrg_pro == "3") {
+                    third_pro = 3
+                } else if (third_avrg_pro == "3.5") {
+                    third_pro = 3.5
+                } else if (third_avrg_pro == "4") {
+                    third_pro = 4
+                } else if (third_avrg_pro == "4.5") {
+                    third_pro = 4.5
+                } else if (third_avrg_pro == "5") {
+                    third_pro = 5
+                } else if (third_avrg_pro == "5.5") {
+                    third_pro = 5.5
+                } else if (third_avrg_pro == "6") {
+                    third_pro = 6
+                } else if (third_avrg_pro == "6.5") {
+                    third_pro = 6.5
+                } else if (third_avrg_pro == "7") {
+                    third_pro = 7
+                } else if (third_avrg_pro == "7.5") {
+                    third_pro = 7.5
+                }else if (third_avrg_pro == "8") {
+                    third_pro = 8
+                } else if (third_avrg_pro == "8.5") {
+                    third_pro = 8.5
+                } else if (third_avrg_pro == "9") {
+                    third_pro = 9
+                } else if (third_avrg_pro == "9.5") {
+                    third_pro = 9.50
+                } else if (third_avrg_pro == "10") {
+                    third_pro = 10
+                }
+            let promedio1 = (first_math + first_lng + first_Ex + first_eco + first_pro)/5
+            let promedio2 = (second_math + second_lng + second_Ex + second_eco + second_pro)/5
+            let promedio3 = (third_math + third_lng + third_Ex + third_eco + third_pro)/5
+            let nota_final_mth = (first_math + second_math + third_math)/3
+            let nota_final_lng = (first_lng + second_lng + third_lng)/3
+            let nota_final_Ex = (first_Ex + second_Ex + third_Ex)/3
+            let nota_final_eco = (first_eco + second_eco + third_eco)/3
+            let nota_final_pro = (first_pro + second_pro + third_pro)/3
+            let promedio_final = (nota_final_mth + nota_final_lng + nota_final_Ex + nota_final_eco + nota_final_pro)/5
+
+
+            function drawVisualization() {
+            var data = google.visualization.arrayToDataTable([
+                    ['Month', "Lengua", "Matematica", 'Economia', 'Programacion', 'Extra', 'Average'],
+                    ['primer trimestre', first_lng, first_math, first_eco , first_pro, first_Ex, promedio1],
+                    ['segundo trimestre', second_lng, second_math, second_eco, second_pro, second_Ex, promedio2],
+                    ['tercer trimestre', third_lng, third_math, third_eco, third_pro, third_Ex, promedio3],
+                    ['Nota final', nota_final_lng, nota_final_mth, nota_final_eco, nota_final_pro, nota_final_Ex, promedio_final],
+                ]);
+
+            var options = {
+                title: 'Notas anuales del colegio',
+                vAxis: { title: 'Notas', minValue: 0, maxValue: 10},
+                hAxis: { title: 'Month' },
+                seriesType: 'bars',
+                series: { 5: { type: 'line' } }
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+
+            var options = {
+    annotations: {
+        boxStyle: {
+      // Color of the box outline.
+            stroke: '#202020',
+      // Thickness of the box outline.
+            strokeWidth: 1,
+      // x-radius of the corner curvature.
+            rx: 10,
+      // y-radius of the corner curvature.
+            ry: 10,
+      // Attributes for linear gradient fill.
+            gradient: {
+        // Start color for gradient.
+            color1: '#202020',
+        // Finish color for gradient.
+            color2: '#202020',
+        // Where on the boundary to start and
+        // end the color1/color2 gradient,
+        // relative to the upper left corner
+        // of the boundary.
+            x1: '0%', y1: '0%',
+            x2: '100%', y2: '100%',
+        // If true, the boundary for x1,
+        // y1, x2, and y2 is the box. If
+        // false, it's the entire chart.
+        useObjectBoundingBoxUnits: true
+        }
+        }
+        }
+};
+        }
+    </script>
+</head>
+
+
+<body>
+    <div id="navbar">
+        <div class="logo">
+            <h1 class="normal_text">HobiHub</h1>
+        </div>
+        <div>
+            <a href="{% url 'inicio' %}">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                    <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                    <div class="dropdown mt-3">
+                        <button class="btn btn-thirdary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'diario' %}">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </footer>
+    <div class="animation">
+        <div class="item"><img class="gif" src="{% static 'Iggy_App\assets\img\pixel-koi-pond_800.gif' %}" alt="lol"></div>
+    </div>
+    <div class="colegio_title">
+        <h1 class="title_text1">Colegio</h1>
+        <center>
+            <hr size="5" color="white" width="90%" align="center">
+        </center>
+    </div>
+    <center>
+        <hr class="hr_1" size="5" color="white" width="90%" align="center">
+    </center>
+    <main class="main_body">
+        <div id="item_boxes" class="box_1">
+            <div class="title_box">
+                <div class="title_img"><img src="{% static 'Iggy_App\assets\img\school.png' %}" width="100px" height="100px"></div>
+                <div class="title_text">
+                    <p class="normal_text">Matematica</p>
+                </div>
+            </div>
+            <hr width="100%" size="6" color="white" align="center">
+            <div class="buttom_box">
+                <center><a type="button" class="btn btn-success" href="{% url 'matematica_form' %}">Go</a></center>
+            </div>
+        </div>
+        <div id="item_boxes" class="box_2">
+            <div class="title_box">
+                <div class="title_img"><img src="{% static 'Iggy_App\assets\img\extracurricualres.png' %}" width="100px" height="100px"></div>
+                <div class="title_text">
+                    <p class="normal_text">Lengua</p>
+                </div>
+            </div>
+            <hr width="100%" size="6" color="white" align="center">
+            <div class="buttom_box">
+                <center><a type="button" class="btn btn-success" href="{% url 'lengua_form' %}">Go</a></center>
+            </div>
+        </div>
+        <div id="item_boxes" class="box_3">
+            <div class="title_box">
+                <div class="title_img"><img src="{% static 'Iggy_App\assets\img\diario.png' %}" width="100px" height="100px"></div>
+                <div class="title_text">
+                    <p class="normal_text">Extra</p>
+                </div>
+            </div>
+            <hr width="100%" size="6" color="white" align="center">
+            <div class="buttom_box">
+                <center><a type="button" class="btn btn-success" href="{% url 'extra_form' %}">Go</a></center>
+            </div>
+        </div>
+        <div id="item_boxes" class="box_4">
+            <div class="title_box">
+                <div class="title_img"><img src="{% static 'Iggy_App\assets\img\deporte.png' %}" width="100px" height="100px"></div>
+                <div class="title_text">
+                    <p class="normal_text">economia</p>
+                </div>
+            </div>
+            <hr width="100%" size="6" color="white" align="center">
+            <div class="buttom_box">
+                <center><a type="button" class="btn btn-success" href="{% url 'economia_form' %}">Go</a></center>
+            </div>
+        </div>
+        <div id="item_boxes" class="box_4">
+            <div class="title_box">
+                <div class="title_img"><img src="{% static 'Iggy_App\assets\img\deporte.png' %}" width="100px" height="100px"></div>
+                <div class="title_text">
+                    <p class="normal_text">Informatica</p>
+                </div>
+            </div>
+            <hr width="100%" size="6" color="white" align="center">
+            <div class="buttom_box">
+                <center><a type="button" class="btn btn-success" href="{% url 'programacion_form' %}">Go</a></center>
+            </div>
+        </div>
+    </main>
+    <center>
+        <div class="chart">
+            <center><div id="chart_div" style="width: 900px; height: 500px;"></div></center>
+        </div>
+    </center>
+</body>
+
+{% endblock%}
+
+</html>

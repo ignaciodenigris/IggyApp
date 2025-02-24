@@ -9,9 +9,16 @@
             <h1 class="normal_text">HobiHub</h1>
         </div>
         <div>
+            {% if user.is_authenticated %}
             <a href="{% url 'diario' %}">Home</a>
-            <a href="#news">News</a>
+            <a href="{% url 'logout_view' %}">Logout</a>
             <a href="#contact">Contact</a>
+            
+            {% else %}
+            <a href="{% url 'diario' %}">Home</a>
+            <li class="nav-item"><a class="nav-link" href="{% url 'login_view' %}">Login</a></li>
+            <a href="#contact">Contact</a>
+            {%endif%}
             <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                 aria-controls="offcanvasExample">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-search"
@@ -60,14 +67,14 @@
             </div>
             <hr width="100%" size="6" color="white" align="center">
             <div class="buttom_box">
-                <center><button type="button" class="btn btn-success">Go</button></center>
+                <center><a type="button" class="btn btn-success" href="{% url 'colegio' %}">Go</a></center>
             </div>
         </div>
         <div id="item_boxes" class="box_2">
             <div class="title_box">
                 <div class="title_img"><img src="{% static 'Iggy_App\assets\img\extracurricualres.png' %}" width="100px" height="100px"></div>
                 <div class="title_text">
-                    <p class="normal_text">Extracurriculares</p>
+                    <center><p class="normal_text">Extra</p></center>
                 </div>
             </div>
             <hr width="100%" size="6" color="white" align="center">

@@ -1,0 +1,33 @@
+
+body{
+    background-color: #202020;
+}
+
+
+.colegio_title{
+    background-color: rgb(32, 32, 32);
+}
+
+
+.title_text1 {
+    margin-top: 50px;
+    margin-left: 70px;
+    background-color: rgb(32, 32, 32);
+    color: rgb(255, 255, 255);
+    font-family: "Source Code Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-style: italic;
+}
+
+.chart{
+    width: 900px;
+    height: 500px;
+}
+
+@media screen and (max-width: 920px) {
+    .chart {
+        display: none;
+    }
+}

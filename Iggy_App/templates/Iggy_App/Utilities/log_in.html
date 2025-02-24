@@ -1,0 +1,18 @@
+{% extends 'Iggy_App/Bases/First_Base.html' %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <center><h1>Aga el log in aqui</h1></center>
+            <center><h5>Ingrese tus datos aqui</h5></center>
+            <form action="" method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Ingrese Usuario">
+            <input type="password" name="password" placeholder="Ingrese contraseña">
+            <button type="submit" class="btn btn-primary"> log in</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -2,9 +2,14 @@
 {% load static %}
 
 {%block content%}
-<head>
 
-<link rel="stylesheet" href="{% static 'Iggy_App\css\Diario.css' %}">
+
+
+
+
+
+
+<link rel="stylesheet" href="{% static 'Iggy_App/css/diario_2.0.css' %}">
 
 <footer>
     <div id="navbar">
@@ -12,7 +17,7 @@
             <h1 class="normal_text">HobiHub</h1>
         </div>
         <div>
-            <a href="{% url 'diario' %}">Home</a>
+            <a href="{% url 'inicio' %}">Home</a>
             <a href="#news">News</a>
             <a href="#contact">Contact</a>
             <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
@@ -40,7 +45,7 @@
                             Dropdown button
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'diario' %}">Action</a></li>
+                            <li><a class="dropdown-item" href="{% url 'inicio' %}">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
@@ -121,25 +126,26 @@
         <hr class="hr_1" size="5" color="white" width="90%" align="center">
     </center>
 
-<div>
-    <table class="table">
-        <thead class="table">
-        <tr class="table">
-            <th class="normal_text" scope="col">num</th>
-            <th class="normal_text" scope="col">fecha</th>
-            <th class="normal_text" scope="col">detalles</th>
-        </tr>
-        </thead>
-        <tbody>
-        {%for forms in forms%}
-        <tr>
-            <td class="normal_text">{{forms.id}}</td>
-            <td class="normal_text">{{forms.fecha}}</td>
-            <td class="normal_text"><a class="btn btn-info" href="{% url 'diario_detalle' forms.id%}">Detalles</a></td>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
+    <div>
+        <table class="table">
+            <thead class="table">
+                <tr class="table">
+                    <th class="normal_text" scope="col">num</th>
+                    <th class="normal_text" scope="col">fecha</th>
+                    <th class="normal_text" scope="col">detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for forms in forms%}
+                <tr>
+                    <td class="normal_text">{{forms.id}}</td>
+                    <td class="normal_text">{{forms.fecha}}</td>
+                    <td class="normal_text"><a class="btn btn-info"
+                            href="{% url 'diario_detalle' forms.id%}">Detalles</a></td>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
 </div>
 

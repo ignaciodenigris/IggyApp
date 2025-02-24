@@ -96,8 +96,7 @@ body {
 
 .data_entry {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 label {
@@ -182,14 +181,4 @@ label {
 .table{
     background-color: #333;
     border: 1px;
-}
-
-@media screen and (max-width: 645px) {
-    .data_entry {
-        display: flex;
-        flex-direction: column;
-    }
-    .chw{
-        display: none;
-    }
 }
