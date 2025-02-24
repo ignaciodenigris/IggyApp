@@ -1,0 +1,150 @@
+{% extends 'Iggy_App/Bases/First_Base.html' %}
+{% load static %}
+
+{%block content%}
+<head>
+
+<link rel="stylesheet" href="{% static 'Iggy_App\css\Diario.css' %}">
+
+<footer>
+    <div id="navbar">
+        <div class="logo">
+            <h1 class="normal_text">HobiHub</h1>
+        </div>
+        <div>
+            <a href="{% url 'diario' %}">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                    <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like,
+                        text,
+                        images, lists, etc.
+                    </div>
+                    <div class="dropdown mt-3">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'diario' %}">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
+<div class="animation">
+    <div class="item"><img class="gif" src="{% static 'Iggy_App\assets\img\pixel-koi-pond_800.gif' %}" alt="lol">
+    </div>
+</div>
+<main class="main_diario">
+    <h1 class="title_text1">Diario</h1>
+    <center>
+        <hr size="5" color="white" width="90%" align="center">
+    </center>
+    <center>
+        <hr class="hr_1" size="5" color="white" width="90%" align="center">
+    </center>
+</main>
+
+<div>
+    <div class="data_entry">
+        <div class="decoration">
+            <div class="clock">
+                <div class="box_date">
+                    <p class="clock_text">{{month}}</p>
+                </div>
+                <div class="box_date">
+                    <p class="clock_text">{{day}}</p>
+                </div>
+            </div>
+            <div class="chw">
+                <div>
+                    <img class="gif_csm" src="{% static 'Iggy_App\assets\img\chainsaw-man-pixel-art_800.gif' %}"
+                        width="100px" alt="lol">
+                </div>
+            </div>
+        </div>
+        <div>
+            <center>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <center>
+                        <p class="normal_text">Entrada de Diario:</p>
+                    </center>
+                    <center>{{form.as_p}}</center>
+                    <center><button type="submit" class="btn btn-primary"> Guardar</button></center>
+                </form>
+            </center>
+        </div>
+    </div>
+</div>
+
+<center>
+    <hr size="5" color="white" width="90%" align="center">
+</center>
+<center>
+    <hr class="hr_1" size="5" color="white" width="90%" align="center">
+</center>
+
+<div class="diary_container">
+    <center>
+        <div class="diary_box">
+            {%for page_dict in page_dict%}
+            <p class="normal_text">{{page_dict}}</p>
+            {% endfor %}
+            {%for page_dict2 in page_dict2%}
+            <p class="normal_text">{{page_dict2}}</p>
+            {% endfor %}
+        </div>
+    </center>
+
+    <center>
+        <hr class="hr_1" size="5" color="white" width="90%" align="center">
+    </center>
+
+<div>
+    <table class="table">
+        <thead class="table">
+        <tr class="table">
+            <th class="normal_text" scope="col">num</th>
+            <th class="normal_text" scope="col">fecha</th>
+            <th class="normal_text" scope="col">detalles</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%for forms in forms%}
+        <tr>
+            <td class="normal_text">{{forms.id}}</td>
+            <td class="normal_text">{{forms.fecha}}</td>
+            <td class="normal_text"><a class="btn btn-info" href="{% url 'diario_detalle' forms.id%}">Detalles</a></td>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</div>
+
+
+
+
+
+{% endblock%}
